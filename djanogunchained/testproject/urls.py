@@ -18,13 +18,14 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from tester import views as testerViews
+from accountinfo import views as aiViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', testerViews.home, name='home'),
     path('about/', testerViews.about, name ='about'),
     path('movie/', include('tester.urls')),
-     path('accounts/', include('accountinfo.urls')),
+    path('accountinfo/', include('accountinfo.urls')),
     # path('favorites/', testerViews.favorites, name='favorites'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
